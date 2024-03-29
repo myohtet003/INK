@@ -24,152 +24,58 @@ class DatabaseSeeder extends Seeder
         \App\Models\User::factory()->create([
             'name'  =>'MTN',
             'email' =>'mtn@gmail.com',
-            'password'=>Hash::make('12345678')
+            'password'=>Hash::make('12345678'),
+            'type' => 'admin'
 
         ]);
 
         \App\Models\User::factory()->create([
             'name'  =>'Sayar',
             'email' =>'sayar@gmail.com',
-            'password'=>Hash::make('87654321')
-
+            'password'=>Hash::make('87654321'),
+            'type' => 'admin'
         ]);
 
-        //category
-        \App\Models\Category::factory()->create([
-            'name'  =>'Computer',
-            'photo' =>'1.jpg',
-            'remark'=>''
-
+        //Artists
+        \App\Models\Artist::factory()->create([
+            'name' =>'Johnny',
+            'position' =>'Founder',
+            'photo' =>'jonny.jpg',
+            'fb_link' =>'www.facebook.com',
+            'viber_link' =>'www.viber.com',
+            'phone' =>'09564324656',
+            'status' =>'',
+            'remark' =>''
         ]);
 
-        \App\Models\Category::factory()->create([
-            'name'  =>'Phone',
-            'photo' =>'2.jpg',
-            'remark'=>''
-
+        \App\Models\Artist::factory()->create([
+            'name' =>'Richard',
+            'position' =>'Co-Founder',
+            'photo' =>'richard.jpg',
+            'fb_link' =>'www.facebook.com',
+            'viber_link' =>'www.viber.com',
+            'phone' =>'09785433222',
+            'status' =>'',
+            'remark' =>''
         ]);
 
-        //item
-        \App\Models\Item::factory()->create([
-            'category_id'=>1,
-            'name'  =>'Dell',
-            'photo' =>'dell.jpg',
-            'remark'=>''
-
+        //Artwork
+        \App\Models\Artwork::factory()->create([
+            'artist_id' => 1,
+            'title' =>'aotet foerotew',
+            'photo' =>'tattoo.jpg',
+            'remark' =>'good'
         ]);
 
-        \App\Models\Item::factory()->create([
-            'category_id'=>1,
-            'name'  =>'Acer',
-            'photo' =>'acer.jpg',
-            'remark'=>''
-
+        //Blog
+        \App\Models\Blog::factory()->create([
+            'artist_id' => 1,
+            'title' =>'Tattoo Blog',
+            'photo' =>'blog.jpg',
+            'description' =>'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, consectetur pariatur debitis voluptatem omnis nisi? Facere ducimus id doloribus rerum sit maxime voluptate animi, officia sapiente quod reprehenderit, fugit repellendus.',
+            'remark' =>'good'
         ]);
 
-        \App\Models\Item::factory()->create([
-            'category_id'=>2,
-            'name'  =>'Samsung',
-            'photo' =>'samsung.jpg',
-            'remark'=>''
 
-        ]);
-
-        \App\Models\Item::factory()->create([
-            'category_id'=>2,
-            'name'  =>'iPhone',
-            'photo' =>'iphone.jpg',
-            'remark'=>''
-
-        ]);
-
-        //products
-        \App\Models\Product::factory()->create([
-            'category_id'=>1,
-            'item_id'=>1,
-            'name'  =>'Dell i5',
-            'photo' =>'delli5.jpg',
-            'price' =>5000000,
-            'qty' =>10,
-            'remark'=>''
-
-        ]);
-
-         \App\Models\Product::factory()->create([
-            'category_id'=>1,
-            'item_id'=>1,
-            'name'  =>'Dell i7',
-            'photo' =>'delli7.jpg',
-            'price' =>7000000,
-            'qty' =>5,
-            'remark'=>''
-
-        ]);
-
-         \App\Models\Product::factory()->create([
-            'category_id'=>1,
-            'item_id'=>2,
-            'name'  =>'Acer i5',
-            'photo' =>'aceri5.jpg',
-            'price' =>4000000,
-            'qty' =>15,
-            'remark'=>''
-
-        ]);
-
-         \App\Models\Product::factory()->create([
-            'category_id'=>1,
-            'item_id'=>2,
-            'name'  =>'Acer i7',
-            'photo' =>'aceri7.jpg',
-            'price' =>6000000,
-            'qty' =>8,
-            'remark'=>''
-
-        ]);
-
-         \App\Models\Product::factory()->create([
-            'category_id'=>2,
-            'item_id'=>3,
-            'name'  =>'Samsung 4/64',
-            'photo' =>'samsung.jpg',
-            'price' =>200000,
-            'qty' =>18,
-            'remark'=>''
-
-        ]);
-
-         \App\Models\Product::factory()->create([
-            'category_id'=>2,
-            'item_id'=>3,
-            'name'  =>'Samsung 8/64',
-            'photo' =>'samsung.jpg',
-            'price' =>400000,
-            'qty' =>3,
-            'remark'=>''
-
-        ]);
-
-         \App\Models\Product::factory()->create([
-            'category_id'=>2,
-            'item_id'=>4,
-            'name'  =>'iPhone 4/64',
-            'photo' =>'iphone.jpg',
-            'price' =>3000000,
-            'qty' =>8,
-            'remark'=>''
-
-        ]);
-
-         \App\Models\Product::factory()->create([
-            'category_id'=>2,
-            'item_id'=>4,
-            'name'  =>'iPhone 8/64',
-            'photo' =>'iphone.jpg',
-            'price' =>4000000,
-            'qty' =>4,
-            'remark'=>''
-
-        ]);
     }
 }

@@ -29,9 +29,9 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/home') }}">
-                   Classic Trading Co.,Ltd.
-                </a>
+                <div class="navbar-brand cursor-pointer">
+                   Ink Tattoo
+                </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -42,18 +42,18 @@
                         @if(Auth::check())
                         @if(Auth::user()->id == 1 || Auth::user()->id == 2)
                             <li>
-                                <a class="nav-link" href="{{ url('/admin/category/list') }}">
-                                Category
+                                <a class="nav-link" href="{{ url('admin/artist/list ') }}">
+                                Artists
                                 </a>
                             </li>
                              <li>
-                                <a class="nav-link" href="{{ url('/admin/item/list') }}">
-                                Item
+                                <a class="nav-link" href="{{ url('admin/artwork/list') }}">
+                                Artworks
                                 </a>
                             </li>
                              <li>
-                                <a class="nav-link" href="{{ url('/admin/product/list') }}">
-                                Product
+                                <a class="nav-link" href="{{ url('admin/blog/list') }}">
+                                Blogs
                                 </a>
                             </li>
                         @endif
@@ -62,12 +62,6 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
-                            <!-- shoppingcart -->
-                        <a href="{{url("/product/shoppingCart")}}" class="btn btn-outline-dark" style="background: #f89224">
-                            <i class="fas fa-shopping-cart"></i>
-                            Shopping Cart[ {{ Session::has('cart') ? Session::get('cart') -> totalQty : ''}} ]
-                        </a>
-                        <!-- shopping cart -->
 
                         <!-- Authentication Links -->
                         @guest
